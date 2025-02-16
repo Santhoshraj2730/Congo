@@ -1,5 +1,5 @@
 flask
-MySQL
+mysql-connector-python
 rembg
 pillow
 gunicorn
