@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session, url_for
 import mysql.connector
+import os
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -7,10 +8,10 @@ app.secret_key = 'your_secret_key'
 
 # Database configuration
 db_config = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'Kavi1021',
-    'database': 'ecommerce'
+    'host': os.getenv("DB_HOST", "localhost"),
+    'user': os.getenv("DB_USER", "root"),
+    'password': os.getenv("DB_PASSWORD", "Kavi1021"),
+    'database': os.getenv("DB_NAME", "ecommerce"),
 }
 
 # Routes
