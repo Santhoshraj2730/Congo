@@ -1,0 +1,5 @@
+flask
+MySQL
+rembg
+pillow
+gunicorn
